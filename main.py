@@ -1,5 +1,5 @@
 print "let's get started!"
-spy_name = raw_input("provide your name here : ")
+spy_name = raw_input("enter your name here : ")
 spy_age = 0
 spy_rating = 0.0
 spy_is_online = False
