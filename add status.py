@@ -12,6 +12,7 @@ def add_status(current_status_message):
         if default.upper() == 'N':
             new_status_message = raw_input(" what status message do you want to set?")
 
+            # validating users input.
             if len(new_status_message) > 0:
                 update_status_message = new_status_message
                 STATUS_MESSAGES.append(update_status_message)
