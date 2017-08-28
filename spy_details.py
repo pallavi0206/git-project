@@ -1,4 +1,9 @@
-spy_name = ' Marple'
-spy_salutation = 'Miss'
-spy_age = 20
-spy_rating = 4.8
+# details of default users.
+spy =\
+{
+    'name' : 'Marple',
+    'salutation' : 'Miss',
+    'age' : '21',
+    'rating' : '4.8',
+    'is_online' : 'True',
+}

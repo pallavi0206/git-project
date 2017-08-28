@@ -19,7 +19,7 @@ def add_status(current_status_message):
             elif default.upper() == 'Y':
                 item_position = 1
                 for message in STATUS_MESSAGES:
-                    print item_position + ". " + message
+                    print item_position + "." + message
                     item_position = item_position + 1
                     message_selection = int(raw_input("\n choose from the above messages "))
                     if len(STATUS_MESSAGES) >= message_selection:

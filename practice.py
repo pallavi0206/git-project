@@ -1,38 +1,42 @@
 # import statments
-from spy_details import spy_name, spy_salutation, spy_age, spy_rating
+from spy_details import spy
 from spy_chat import start_chat
 
 print "let's get started!"
-question = "Do you want to continue as " + spy_salutation + " " + spy_name + " (Y/N): "
+question = "Do you want to continue as " + spy['salutation'] + " " + spy['name'] + " (Y/N): "
 existing = raw_input(question)
 
 # validating user input
 if existing == 'Y' or existing == 'y' :
-    start_chat(spy_name, spy_age, spy_rating)
-    # logic here
-    pass
+    # user wants to continue as a default users.
+
+    # concatination of salutation and name of spy.
+    spy_name = spy['salutation'] + " " + spy['name']
+
+    # starting chat application.
+    start_chat(spy['name'], spy['age'], spy['rating'])
+
 elif existing == 'N' or existing == 'n' :
-    # new code here
-   pass
+
+    pass
 else:
     print " Invalid output. Try Again. "
 
-spy_name = raw_input("provide your name here : ")
-spy_age = 0
-spy_rating = 0.0
-spy_is_online = False
+# user wants to continue as a new user
+spy['name'] = raw_input("provide your name here : ")
 
 # Check whether spy has input something or not
-if len(spy_name) > 0:
+if len(spy['name']) > 0:
     # code block if the condition is true.
-    # concatination of saluttion and name.
 
     spy_salutation = raw_input('what should we call you ?: ')
     spy_age = int(raw_input("Enter your age "))
-    if spy_age > 12 and spy_age <= 50:
+
+    # concatination of salutation and name.
+    if spy['age'] > 12 and spy['age'] <= 50:
       spy_rating = float(raw_input(" What is your spy rating:"))
       if spy_rating > 4.5:
-        print ("exellent")
+        print ("excellent")
       elif spy_rating > 3.5 and spy_rating <= 4.5:
         print ("great")
       elif spy_rating > 2.5 and spy_rating <= 3.5:
@@ -43,12 +47,13 @@ if len(spy_name) > 0:
           print (" work hard and do better")
     else:
       print (" Sorry.. You are not eligible for spy. ")
-    spy_name = spy_salutation + " " + spy_name
-    print 'welcome ' + spy_name + ' happy to see you '
-    print "Alright " + spy_name + " I'd like to know more about you before we proceed further"
+    spy['name'] = spy['salutation'] + " " + spy['name']
+    spy['is_online'] = True
+    print 'welcome ' + spy['name'] + ' happy to see you '
+    print "Alright " + spy['name'] + " I'd like to know more about you before we proceed further"
 else:
     print "Invalid Name. Try Again."
-print "Authentication complete. welcome " + spy_name + " age: " +  str(spy_age) + " spy rating: " + str(spy_rating) + " happy to see you"
+print "Authentication complete. welcome " + spy['name'] + " age: " +  str(spy['age']) + " spy rating: " + str(spy['rating']) + " happy to see you"
 
 
 
