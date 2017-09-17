@@ -33,7 +33,7 @@ if len(spy['name']) > 0:
     # concatination of salutation and name.
     spy_salutation = raw_input('what should we call you ?: ')
     spy_age = int(raw_input("Enter your age "))
-    if spy_age > 15 or spy_age <= 50:
+    if spy_age > 15 and  spy_age <= 50:
         spy_rating = float(raw_input(" What is your spy rating:"))
         if spy_rating > 4.5:
             print ("excellent")
